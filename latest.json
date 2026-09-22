@@ -1,44 +1,60 @@
 {
-  "version": "2026.09.22.1",
+  "version": "2026.09.22.3",
   "channel": "stable",
-  "notes": "AI制图 清空目录/扫描持久化修复、图生图架构识别修复、runtime 漏传修复、源图比例联动、提示词文本框宽度与按钮位置调整",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.1/",
+  "notes": "系统通知新增「一键更新」：点击后自动停止后端/ComfyUI -> 拉取并逐文件校验覆盖 -> 重新拉起启动器 -> 页面自动刷新；任意盘符/多级目录/中文路径自适应。新增一次性清理命令（清空本项目 ComfyUI/input）。更新源按「查版本求新、下文件求快」双通道择优。",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.3/",
+  "restart": "launcher",
+  "oneshot_clean": [
+    "base/ComfyUI/input"
+  ],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "b12567a9f13085e5f9c63720e66617bc1b9ecfd6be2a630a5e84e9fc1d2d4c26",
-      "size": 4251535,
+      "sha256": "69194255256962699cbca4d042c4b627edfcad6d20613f1b43d7cd6738a0303e",
+      "size": 4293600,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "565532769f91bf5eabdf977e139dd6a238fc6294f78defefcba6d7453445e5e0",
-      "size": 1362559,
+      "sha256": "0ff580724c0deeb431991808c230da0e504728d4d0bb895f467ebbe89c76b456",
+      "size": 1367484,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "0765f2ec2436ba59066c81714765edc8778593c87106ce97c95d7f8d9ce1f655",
-      "size": 112377,
+      "sha256": "908c8994ce308471a2fa6291de40fdd8f22b6ea6410e830d819a091489428070",
+      "size": 113060,
+      "mode": "replace"
+    },
+    {
+      "path": "sage_tcc.zip",
+      "sha256": "8ede26c4da82105c33ad1e8cfa183a4c2f2b2d53142dbee6b16437147cd1c35b",
+      "size": 542933,
       "mode": "replace"
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "e70c47714e1e2463ce218fe82ff7cfcac9d6b766ec6df428e8ef418f54e4b227",
-      "size": 18538496,
+      "sha256": "9c3e2835df564648dd27d192ac8a18bbb7d2c554662c4404745a37e0bce463a4",
+      "size": 18870272,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "047305df2e9aff818ef4e2c0356bcf6c9f0960649540b14ecdcafdf0ca3d81b6",
+      "sha256": "0cb6af4f159a14267a8d904dcb2166ef1cc77787332e8b6363b1f39f1e8166f3",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "e74f6d2f101dfb635a7136d4cf310e88a97b95bf919df72fd6908cc37ab10de6",
+      "sha256": "e81f3125db1ce69dad12b73f8008331ebfd07537e02abbd22b870b8518a0ff4e",
       "size": 64,
       "mode": "deferred_new"
+    },
+    {
+      "path": "_app_version.txt",
+      "sha256": "bf66102a5115daa29580da14d7bdd198ace5464f2af435f0507759550df3c35e",
+      "size": 13,
+      "mode": "replace"
     }
   ]
 }
