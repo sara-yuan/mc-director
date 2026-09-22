@@ -1,8 +1,8 @@
 {
-  "version": "2026.09.22.7",
+  "version": "2026.09.22.8",
   "channel": "stable",
-  "notes": "AI制图·云端推理只保留上传结果；上传表单迁至 云部署 → 2·部署包来源 → 新增「镜像站上传」按钮（与从本地上传 / 云端部署码并列）；三段式模式切换联动；补充结果面板状态与进度；修复一处前端语法错误。",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.7/",
+  "notes": "修复 AI制图「运行位置」切换：本地推理/云端推理 现在会立即刷新上方面板；云端按钮在已部署或已配置云端 SSH 时可点，修复切换云端后被强制回本地的问题。",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.8/",
   "restart": "launcher",
   "oneshot_clean": [
     "base/ComfyUI/input"
@@ -10,20 +10,20 @@
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "d3b7538ac07334718c30d07499e9be978c1935f79cc239c7021f796eaf54297f",
-      "size": 4363928,
+      "sha256": "12fe02a719af6ff0adfa1fab5352a0a9262c965f1e7f144482422288d19c2e5d",
+      "size": 4367182,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "896c5a521cdfe7d170bdf3456ad0ea13f34e338febff3016b210de622ab5bd26",
-      "size": 1363578,
+      "sha256": "fdbbf3807fb384b7cc5d718836153238c0b2bc1155b438a609974b5a97609fc9",
+      "size": 1366324,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "8bdcdbb9e81815ba74705f20bca0301c3c326f13b8a51b524b8f1ce2c97c388a",
-      "size": 112755,
+      "sha256": "1b1da12b2cbd2455978020c7083700c4531f51046813837dbb4738c4408237c0",
+      "size": 112007,
       "mode": "replace"
     },
     {
@@ -34,25 +34,25 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "bea7a975484fc05701bd2ca1f750645370a5e50d41d70e5307797f06e11da2b5",
+      "sha256": "12858825b4b61581822f9c22c2fd483aaf7be4a15fcaa0701dd0cfd949327b07",
       "size": 19083776,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "c706d40cdf3662bb5a44afafe5dcc3584451ff24c29e40ba84c2becfb1248a53",
+      "sha256": "a27c2d9dc9c5085bbc7613b59f604db4c1a9934c25c3545a028143878886bbdf",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "ceb2258f3101fe6a4b6f8ff642271283433706505e504c301be0658a7b727c8c",
+      "sha256": "bddf5b6652ef3c6536232afc1f281f24b099cf8c99b9cf2a83a6e4436690b401",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "18fc2c570ce283baaf6e99128182f1952abaa74f7f1ef4709c5c6c9551f5c292",
+      "sha256": "446022447a8ca110e6d04cdb92e227f0061bcf613d4bded7e5297fdce22dddf3",
       "size": 13,
       "mode": "replace"
     }
