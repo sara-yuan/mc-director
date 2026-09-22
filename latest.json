@@ -1,29 +1,27 @@
 {
-  "version": "2026.09.22.10",
+  "version": "2026.09.22.11",
   "channel": "stable",
-  "notes": "AI制图·云端推理改为列出云端 ComfyUI 已有全部模型（不限定架构，进度条样式去掉）；新增 /api/imagegen/cloud/models；历史图片支持右键「作为参考图」；镜像站上传补充链接填法与子目录说明。",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.10/",
+  "notes": "AI制图·云端推理：去掉云端模型列表显示，切到云端即留白；镜像站上传面板精简（去掉副标题与路径提示）；云端模型扫描兼容软链接权重（仙公云等镜像把权重做成链接，之前扫不到）。",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.11/",
   "restart": "launcher",
-  "oneshot_clean": [
-    "base/ComfyUI/input"
-  ],
+  "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "dbd3309e1806828a29e3c518175be5a72b99763a66c01c0e1a3fe6249d7af0ae",
-      "size": 4415079,
+      "sha256": "282886727e8cafdaab6b0cd1143876e25994dcc8a4a6cd53cc52e5566932e41f",
+      "size": 4371293,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "d649e2f75de56082ecfb14a1dfba61901a9b80cb5bca1318b4af05da9c02771c",
-      "size": 1364045,
+      "sha256": "3c7b55a551ef5929970851a559043d552d8f9155f502f33d53b4b7edc12516ec",
+      "size": 1364728,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "548a9b2f3fd4f45dfa869f48bc04494dce0891adb17f91ca56afe4ced96befd1",
-      "size": 112419,
+      "sha256": "d5f80d7862032ea9d32d14347d880e89e5118570af2d05a83a964248392cc083",
+      "size": 113206,
       "mode": "replace"
     },
     {
@@ -34,25 +32,25 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "2f20aa8d9ec57733414c655d70e573dcb64571d49de6f854d01742e24ff80097",
+      "sha256": "678018c5e694525e8c267491db97ede85569bff4304a4362b0bda9651c0cd9e9",
       "size": 19150848,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "1f56a140c20f63789617020ffb2754391e8278a4670ad7481796cdfc44121db6",
+      "sha256": "8975bda840b073d9183c004ec147fbff42e433dcde294afa78ce24bc69ac7ac0",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "f31f1f519836a606890663ac855fa5328e67b6dc08f046559d4882c88ab76d8c",
+      "sha256": "3f3d2ad6668e8692c1b8f690bd9c09d81c78df9d4c86a15d41c08cd2f04552a1",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "7ae5a35f2c2be698e7c2fa090b4d145a9e3d3206a2d3980798bec7f22ac0c69b",
+      "sha256": "211208caa7913cdb9c64754daa3fda5763f4a25e5ca114850928fe79e3a3df82",
       "size": 14,
       "mode": "replace"
     }
