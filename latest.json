@@ -1,5 +1,5 @@
 {
-  "version": "2026.09.22.4",
+  "version": "2026.09.22.5",
   "channel": "stable",
   "notes": "修复一键更新后需要手动点『开始』的问题：落地器重启启动器时注入自动续跑开关，启动器已激活且已同意条款时自动开始；页面等待重启阶段新增提示；任意盘符/多级目录/中文路径自适应，含一次性清理 base/ComfyUI/input。",
   "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.4/",
