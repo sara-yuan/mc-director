@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.22.15",
+  "version": "2026.09.22.16",
   "channel": "stable",
-  "notes": "剧本制图分析支持六段式；H3 增加 FP8/BF16 原精度链路与按显存推荐；镜像站上传换源探测加固",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.15/",
+  "notes": "六段式剧本分析已修复；H3 支持 FP8/BF16 原精度链路并按显存推荐；权重直链改为精确映射（修复 404 与云端大小写）",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.16/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "6fd15ef4b287e38049c27665191b93cbbf031ba49367a85aa543adc56170d9f2",
-      "size": 4397241,
+      "sha256": "608de9022f47afe70e5db91a6ae5956e8cfb975c62c3403d2b78b3757a94fb94",
+      "size": 4384642,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "846e400beaa696f3ab0855e34a6c7f003f4bb64b355c6dce4a1fc7ca4e2f72ad",
-      "size": 1361353,
+      "sha256": "1883d4a0710b543f4891022e19e94fb434a6b46191feb2c1eeb2a30aa3df1b37",
+      "size": 1365037,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "fcc589cb3107c2166282cc8a6bcb3238a1cf08464e1e1e9dec9ed4a38dc58911",
-      "size": 113673,
+      "sha256": "c106d7038d6ecce543e40448c1e9664e04ab54a4e10fd697316fb39776cd785c",
+      "size": 112901,
       "mode": "replace"
     },
     {
@@ -32,25 +32,25 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "87fc7118aab6f8fb796d5ffd6d562398cd439392d1c2013e6dfd274ac4386734",
-      "size": 19330048,
+      "sha256": "bcdeb6d9f47b7478327ba28bfee3977584874207f364309142a4298d7ccccfe6",
+      "size": 19338240,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "e226f4de1ab5e4bf0aa1c870e06ff379cd0b2eae334f5cfb5e548e92995f238b",
+      "sha256": "6ae87560f7da48d2f6b9390e4186c859ba40215d57a9a32242dbc7670ed994df",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "8509d4dcc32b3b235055b8355a9e704d5baf086058e8033a2e812bb9d9385faa",
+      "sha256": "78c532c043b35f27880d6714e6706f59abfdf21cbc6ce3bdc6aa723b02725fb3",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "8c0a4550da666428f24840299c63af50c7c72fab0c99a75d8bd212cd6423162a",
+      "sha256": "5c953c1c2070d081774db72ad4709dc497ad00888a339e95be21a3c3f004ef69",
       "size": 14,
       "mode": "replace"
     }
