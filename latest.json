@@ -1,27 +1,33 @@
 {
-  "version": "2026.09.22.16",
+  "version": "2026.09.26.2",
   "channel": "stable",
-  "notes": "六段式剧本分析已修复；H3 支持 FP8/BF16 原精度链路并按显存推荐；权重直链改为精确映射（修复 404 与云端大小写）",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.22.16/",
+  "notes": "批量生成分段新增每段本地/云端运行端选择，本地/云端各自串行且互不等待；分段队列显示完整分镜号与运行端；已选/生成中分镜不可重复选择；AI编剧工具调用修复等",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.26.2/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "608de9022f47afe70e5db91a6ae5956e8cfb975c62c3403d2b78b3757a94fb94",
-      "size": 4384642,
+      "sha256": "9c2b2ab9b70c0647828438a58aa2e07fce292b857ab0cb4eb36736ba3aeeec11",
+      "size": 4519192,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "1883d4a0710b543f4891022e19e94fb434a6b46191feb2c1eeb2a30aa3df1b37",
-      "size": 1365037,
+      "sha256": "4e4c4fd1cff0cb4cef42b501c6d8ed96d8be95ebf75348a2f433ec73bba13ba8",
+      "size": 1352795,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "c106d7038d6ecce543e40448c1e9664e04ab54a4e10fd697316fb39776cd785c",
-      "size": 112901,
+      "sha256": "d964260d82cb5458df96aa2c0496b2d5c5a228941821ab217d1c053845f1f308",
+      "size": 112423,
+      "mode": "replace"
+    },
+    {
+      "path": "cloud_path_providers.json",
+      "sha256": "3ec177ff24a938a8c4cf4d79f41912e7d7ca1f605a02180f691134be35397474",
+      "size": 1164,
       "mode": "replace"
     },
     {
@@ -32,26 +38,26 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "bcdeb6d9f47b7478327ba28bfee3977584874207f364309142a4298d7ccccfe6",
-      "size": 19338240,
+      "sha256": "f5ccf9a39da47e39774cd09c3a87011864edb9cacefb13f3023f7387b9d32937",
+      "size": 20299776,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "6ae87560f7da48d2f6b9390e4186c859ba40215d57a9a32242dbc7670ed994df",
+      "sha256": "f011762299b5a0897df0ee594095466c05fef4e9fee4c6dadefefd58551f5e91",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "78c532c043b35f27880d6714e6706f59abfdf21cbc6ce3bdc6aa723b02725fb3",
+      "sha256": "c31842949d9ac61a46d7b9a7c9874f8db98f55c9a939d3e8381f5e395781b3f5",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "5c953c1c2070d081774db72ad4709dc497ad00888a339e95be21a3c3f004ef69",
-      "size": 14,
+      "sha256": "9e74fd63eca2ccbc2342fcdf6da6fd94c52321d3e1a44f08e3954394ca303c89",
+      "size": 13,
       "mode": "replace"
     }
   ]
