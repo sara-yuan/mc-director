@@ -1,8 +1,8 @@
 {
-  "version": "2026.09.26.2",
+  "version": "2026.09.26.3",
   "channel": "stable",
-  "notes": "批量生成分段新增每段本地/云端运行端选择，本地/云端各自串行且互不等待；分段队列显示完整分镜号与运行端；已选/生成中分镜不可重复选择；AI编剧工具调用修复等",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.26.2/",
+  "notes": "一键更新接入云端ComfyUI更新：下载git云包+SFTP上传解压+重启云端ComfyUI，兼容autodl/仙公/镁光/智美川路径；重编pyd并重签",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.26.3/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
@@ -38,27 +38,32 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "f5ccf9a39da47e39774cd09c3a87011864edb9cacefb13f3023f7387b9d32937",
-      "size": 20299776,
+      "sha256": "cabd5bd0c06c4aadbfbacdf1ba288f2177602bb8b6de2bac5a039e8441e9585a",
+      "size": 20339712,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "f011762299b5a0897df0ee594095466c05fef4e9fee4c6dadefefd58551f5e91",
+      "sha256": "4cd4cccc8f6c20eb905cde2f3397fd9e7f103d413fb1b6e1f97b577ea4e9c535",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "c31842949d9ac61a46d7b9a7c9874f8db98f55c9a939d3e8381f5e395781b3f5",
+      "sha256": "afab74beb407c183f74482c03e44c3a727b3d0a27ba643e2f050a9219ff8875d",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "9e74fd63eca2ccbc2342fcdf6da6fd94c52321d3e1a44f08e3954394ca303c89",
+      "sha256": "fe1faaf3eb692526ceffcd8dd489967002dd1eb4652674eb7260e781fd1ef9fa",
       "size": 13,
       "mode": "replace"
     }
-  ]
+  ],
+  "cloud": {
+    "path": "dist/2026.09.26.3/cloud_comfy_update_2026.09.26.3.tar.gz",
+    "sha256": "37445aba5710a0dc9fcceeffb29f31a099c68a84246875887732198a5ee460ff",
+    "size": 119284
+  }
 }
