@@ -1,7 +1,7 @@
 {
   "version": "2026.09.26.5",
   "channel": "stable",
-  "notes": "云端生图模型路径修复(custom_gen)、RIFE权重自动桥接、AI制图云端模型套数显示与文案精简",
+  "notes": "云端生图模型路径修复(custom_gen)、RIFE权重自动桥接、AI制图云端模型套数显示与文案精简；含老用户云端补丁包",
   "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.26.5/",
   "restart": "launcher",
   "oneshot_clean": [],
@@ -60,5 +60,10 @@
       "size": 13,
       "mode": "replace"
     }
-  ]
+  ],
+  "cloud": {
+    "path": "dist/2026.09.26.5/cloud_comfy_update_2026.09.26.5.tar.gz",
+    "sha256": "37445aba5710a0dc9fcceeffb29f31a099c68a84246875887732198a5ee460ff",
+    "size": 119284
+  }
 }
