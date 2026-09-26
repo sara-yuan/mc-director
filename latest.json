@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.26.3",
+  "version": "2026.09.26.4",
   "channel": "stable",
-  "notes": "一键更新接入云端ComfyUI更新：下载git云包+SFTP上传解压+重启云端ComfyUI，兼容autodl/仙公/镁光/智美川路径；重编pyd并重签",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.26.3/",
+  "notes": "分段批量新增视频API下拉(Seedance/H3/H3Max，未配置置灰不可选)；H3 Max放开多图/参考音频/参考视频(参考模式与首尾帧互斥，一次请求选一种)；修复H3 Max前端硬拦截与提示文案",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.26.4/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "9c2b2ab9b70c0647828438a58aa2e07fce292b857ab0cb4eb36736ba3aeeec11",
-      "size": 4519192,
+      "sha256": "9a19566cc0107565af2c6cb2d7925abe24e81e225b2b67f594f49daaf64f5a58",
+      "size": 4538776,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "4e4c4fd1cff0cb4cef42b501c6d8ed96d8be95ebf75348a2f433ec73bba13ba8",
-      "size": 1352795,
+      "sha256": "912939f9ff2cfd04db44a47f574ca62f144cd6c1ecc5522f33bbc19c0f466e05",
+      "size": 1359865,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "d964260d82cb5458df96aa2c0496b2d5c5a228941821ab217d1c053845f1f308",
-      "size": 112423,
+      "sha256": "8212399a067d8f885a8f333477a07c526e6c6b0e971841d533a2dc95ebb1d08f",
+      "size": 112941,
       "mode": "replace"
     },
     {
@@ -38,31 +38,31 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "cabd5bd0c06c4aadbfbacdf1ba288f2177602bb8b6de2bac5a039e8441e9585a",
-      "size": 20339712,
+      "sha256": "e96625ecae9e0925fb69abf9fcfa00034c85a29ef9c38258819a8927f4a3d798",
+      "size": 20336128,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "4cd4cccc8f6c20eb905cde2f3397fd9e7f103d413fb1b6e1f97b577ea4e9c535",
+      "sha256": "9eefb3e924db90c2649663048615118db4d70479ebd806a07081edac63466253",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "afab74beb407c183f74482c03e44c3a727b3d0a27ba643e2f050a9219ff8875d",
+      "sha256": "afe1ac3ed254c095c520e05fe8ff95ad2708d64cc3faa49bd4759d24c8968227",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "fe1faaf3eb692526ceffcd8dd489967002dd1eb4652674eb7260e781fd1ef9fa",
+      "sha256": "30702df1a88a89867e0ea153b8d93bce7d47f25eb7a214a08e21c364cdc99517",
       "size": 13,
       "mode": "replace"
     }
   ],
   "cloud": {
-    "path": "dist/2026.09.26.3/cloud_comfy_update_2026.09.26.3.tar.gz",
+    "path": "dist/2026.09.26.4/cloud_comfy_update_2026.09.26.4.tar.gz",
     "sha256": "37445aba5710a0dc9fcceeffb29f31a099c68a84246875887732198a5ee460ff",
     "size": 119284
   }

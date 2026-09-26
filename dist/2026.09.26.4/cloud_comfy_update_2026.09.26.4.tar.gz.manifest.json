@@ -1,0 +1,80 @@
+{
+  "package": "cloud_comfy_update_20260926.tar.gz",
+  "created": "2026-09-26 21:15:22",
+  "version": "20260926",
+  "sha256": "37445aba5710a0dc9fcceeffb29f31a099c68a84246875887732198a5ee460ff",
+  "size": 119284,
+  "extract_to": "<target>/app",
+  "files": [
+    {
+      "arc": "ComfyUI/comfy/latent_formats.py",
+      "size": 45146,
+      "sha256": "e2d15c19a9241666afd8398b5c7639cc41120c5cdf8a41ba4fa1d74dc5419208"
+    },
+    {
+      "arc": "ComfyUI/comfy/ldm/qwen_image21/model.py",
+      "size": 19825,
+      "sha256": "81a43c55e2292889d8b77d79cf4cb56fd3dfb717baf5e40f1d31f7700100c039"
+    },
+    {
+      "arc": "ComfyUI/comfy/ldm/wan/model_animate2.py",
+      "size": 22606,
+      "sha256": "62f5154b5743e4c2070e6dbc7f24695a497dfe99326a0c001147467655af6034"
+    },
+    {
+      "arc": "ComfyUI/comfy/ldm/wan/vae2_2.py",
+      "size": 26379,
+      "sha256": "875cb8c24e8a9a561124067881a4f51b9917e97551f0bc5bb7ce12d5f6c6cfb8"
+    },
+    {
+      "arc": "ComfyUI/comfy/lora.py",
+      "size": 25541,
+      "sha256": "a2b35c96bd6352ec9fff3656837ef566a60fb9e10de872bf3267defec1234c76"
+    },
+    {
+      "arc": "ComfyUI/comfy/model_base.py",
+      "size": 131434,
+      "sha256": "0465d29a444c4aab2289d09788a9669ad2b957ed8143bd868eb36217ea8fdc22"
+    },
+    {
+      "arc": "ComfyUI/comfy/model_detection.py",
+      "size": 90004,
+      "sha256": "053df83af873a13357d029eb39420c4b8e7be936701e66606689470d7fc8cff6"
+    },
+    {
+      "arc": "ComfyUI/comfy/sd.py",
+      "size": 134184,
+      "sha256": "ea776ac0b857ee7e4f933a613d89fd8992272877ba4271af0dc261e4c87c1ff6"
+    },
+    {
+      "arc": "ComfyUI/comfy/supported_models.py",
+      "size": 86555,
+      "sha256": "f0fabccfe295199b17bf6b007d3a3851b016add08e98a307730cd8ece81c7405"
+    },
+    {
+      "arc": "ComfyUI/comfy/text_encoders/minimax.py",
+      "size": 10121,
+      "sha256": "cf079407f6e9ee2c875a0d143cc067e40fa2cc316bc2b54c04f00a0046162e71"
+    },
+    {
+      "arc": "ComfyUI/comfy/text_encoders/qwen_image21.py",
+      "size": 4851,
+      "sha256": "c64016aa703f913859c9afb7efe5d1e5120c8fa2820f9f7acc00792987d39136"
+    },
+    {
+      "arc": "ComfyUI/comfy_extras/nodes_model_patch.py",
+      "size": 44531,
+      "sha256": "812dc0ae8db29e4302a8ea24d502c916a7a8dbb7c4ebfacfef423a84af0f42a4"
+    },
+    {
+      "arc": "ComfyUI/comfy_extras/nodes_qwen.py",
+      "size": 12003,
+      "sha256": "37ac231c30dc3db43aaa8942df6344a1d1b7eb0e02fcea8b312486acc5078b1d"
+    },
+    {
+      "arc": "ComfyUI/custom_nodes/ComfyUI-Director-H3/__init__.py",
+      "size": 14350,
+      "sha256": "3ed314b7bc5c013a52dc69125c940299213b7fa0ae27379a0d24752492342b4f"
+    }
+  ]
+}
