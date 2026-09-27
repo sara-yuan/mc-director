@@ -1,7 +1,7 @@
 {
   "version": "2026.09.27.7",
   "channel": "stable",
-  "notes": "无VPN一键更新提速：新增gh-proxy.com/ghproxy.cc镜像优先，下载改用系统curl强制直连+IPv4，解决7%-13%卡慢",
+  "notes": "无VPN一键更新提速 + 云端增量代码更新(1个节点文件)",
   "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.7/",
   "restart": "launcher",
   "oneshot_clean": [],
@@ -60,5 +60,10 @@
       "size": 13,
       "mode": "replace"
     }
-  ]
+  ],
+  "cloud": {
+    "path": "dist/2026.09.27.7/cloud_comfy_update_2026.09.27.7.tar.gz",
+    "sha256": "f3eb30775261120475580a67f396bfc83578a65a47eff3b2c2efa218248e8da6",
+    "size": 4761
+  }
 }

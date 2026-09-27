@@ -1,0 +1,15 @@
+{
+ "package": "cloud_comfy_update_2026.09.27.7.tar.gz",
+ "created": "2026-09-27 22:02:53",
+ "version": "2026.09.27.7",
+ "sha256": "f3eb30775261120475580a67f396bfc83578a65a47eff3b2c2efa218248e8da6",
+ "size": 4761,
+ "extract_to": "<target>/app",
+ "files": [
+  {
+   "arc": "ComfyUI/custom_nodes/ComfyUI-Director-H3/__init__.py",
+   "size": 14350,
+   "sha256": "3ed314b7bc5c013a52dc69125c940299213b7fa0ae27379a0d24752492342b4f"
+  }
+ ]
+}
