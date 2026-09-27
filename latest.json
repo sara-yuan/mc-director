@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.26.5",
+  "version": "2026.09.27.1",
   "channel": "stable",
-  "notes": "云端生图模型路径修复(custom_gen)、RIFE权重自动桥接、AI制图云端模型套数显示与文案精简；含老用户云端补丁包",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.26.5/",
+  "notes": "批量生成/批量替换分镜圈选切换、全选全不选；批量替换按钮蓝色样式",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.1/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "154db0cd65a5af41b0962e88924dd2d8b6b84418912f5f3ba56717bfe94de73e",
-      "size": 4517769,
+      "sha256": "443f2e93e7c19578be3eea569d0b7b5ec3fe20fc5ceb524dd1853da08097e7af",
+      "size": 4531573,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "08bf1d22231723986eec495bcaab5934d92f29f938098a84355437fd292c8fb6",
-      "size": 1363162,
+      "sha256": "e67bcea931166c37a0457d400d045ad243c38a57068db4ad93fe8131a1bae0b2",
+      "size": 1369724,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "de55ef1f2b6230038c61fea0cdb75365bd38bf7fafe1bdf387325b767e31759d",
-      "size": 111637,
+      "sha256": "967a7c9c7c862d14ef8ce3ef0e422a431306a0bd658a107555f1b0b5385fbc16",
+      "size": 112029,
       "mode": "replace"
     },
     {
@@ -56,14 +56,9 @@
     },
     {
       "path": "_app_version.txt",
-      "sha256": "df20ebd930b06a382bc519d42a3cec337dc478c52d3f518d365dec11bb7020f4",
+      "sha256": "5151e248bf65f644a5419ef57f44a6527bf20aa3db9d164701e083bd10f152dd",
       "size": 13,
       "mode": "replace"
     }
-  ],
-  "cloud": {
-    "path": "dist/2026.09.26.5/cloud_comfy_update_2026.09.26.5.tar.gz",
-    "sha256": "37445aba5710a0dc9fcceeffb29f31a099c68a84246875887732198a5ee460ff",
-    "size": 119284
-  }
+  ]
 }
