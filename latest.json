@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.27.2",
+  "version": "2026.09.27.3",
   "channel": "stable",
-  "notes": "云端ComfyUI累计代码补丁(H3/Qwen/参考图链路同步)；一键更新支持云端SSH自动部署；GPU告警仅按显存占用；资产/音频批量删除ESC退出；AI制图模型显示文件夹名+精度",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.2/",
+  "notes": "双卡显存告警(本机+云端,占用>=97%弹窗,可分别停止); 镜像站上传修复软链stat -L(兼容仙公只读软链); 云部署验证SSH状态红绿显示",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.3/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "741e8e798c70675543e734a6d2e8ca90f9c416373fad2005a18d62724e7ef776",
-      "size": 4516460,
+      "sha256": "174cfc39155f4cbe802d453881a9abbf2848d3d4a7d6173aea2040677cbc08c1",
+      "size": 4520895,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "b72896fd1bbefedbf5f6364613175b29e57b20116c62badce204472f078c1639",
-      "size": 1369161,
+      "sha256": "e0b28aea6e35a6011444067a3fe87c9f9254029dbcde71b0cb3f1f849afd7307",
+      "size": 1362473,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "3a73834a71cb1e15f74bc4d0e92af19c2072a9b98e28dc7cbc061815bf8350d0",
-      "size": 112186,
+      "sha256": "4b306bdc88ef919dc08981b4eb069560ebb7e8555a852ca755fdc4c984f14be7",
+      "size": 113696,
       "mode": "replace"
     },
     {
@@ -38,32 +38,27 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "0d8c637d73747700c457bdc64d7c024051738b324645bf5d8475c5defd1ed099",
-      "size": 20345344,
+      "sha256": "400ff8f060fd1c5bae565cd17618eedfc6dedb1b86e928ea7497d1719b659c42",
+      "size": 20355584,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "bcd1135d5c0de5adb9d86b33585131cff676a287e204542e9de19279f040064c",
+      "sha256": "1e329179e1a87d04bf9e8f0bc0d389dcf79ac4e71209fc3fec1865f78d4378f6",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "d0d4ba5149aefd0b062afc34a6388c559b587b1e1da2873ccef052b282cce2c7",
+      "sha256": "88ca2a0700112bf38193c4f127b72e264378bb63110f073273254baf1c97414b",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "2e3ecac26f30d8d682f793c523c3aa6c0769a132804ced556731b192219be7ea",
+      "sha256": "ec5d31acd2cdd02cdd59d05a50cef4abaaf178c1f7d8c35cc9c927d3588809e6",
       "size": 13,
       "mode": "replace"
     }
-  ],
-  "cloud": {
-    "path": "dist/2026.09.27.2/cloud_comfy_update_2026.09.27.2.tar.gz",
-    "sha256": "d5a79bf10facc69dfbeb7a08f9f87b4d37132e5b74ae46ea52516bfa7b4d5ff6",
-    "size": 253541
-  }
+  ]
 }
