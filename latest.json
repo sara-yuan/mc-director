@@ -1,8 +1,8 @@
 {
-  "version": "2026.09.27.6",
+  "version": "2026.09.27.7",
   "channel": "stable",
-  "notes": "一键更新强制直连(不跟随系统/VPN代理), 修复开关VPN导致卡7%问题; 下载源jsDelivr优先+真实进度",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.6/",
+  "notes": "无VPN一键更新提速：新增gh-proxy.com/ghproxy.cc镜像优先，下载改用系统curl强制直连+IPv4，解决7%-13%卡慢",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.7/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
@@ -38,25 +38,25 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "d643479ef50c4c969f9e6e0ec0c38d6c9df0ec49194898b00f0a329aaab01100",
-      "size": 20366336,
+      "sha256": "ba6749c9d64563e29aa88a9acb09ddda959641ea7360b0ba1cbf28aa83c7513e",
+      "size": 20383744,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "8e48692762cb41426890087b25c9fb2c032d2c1dd681441f4e5da244cf8e6493",
+      "sha256": "b762427547e02888560e0149d42e0665430646e19c736c821442472afc69e694",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "8fd34a87c69353bbd3887ee6bd346841995a42f8af594d84588f26138638429b",
+      "sha256": "4280f5a7ab2ffc54fd68fc60ce792587fb7023fadd74a25644f97b24889a3ef7",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "61fcaf54c1840ff0e514e56c8b9186b1965443f33ad2308d4c1a911ff39bb405",
+      "sha256": "dd449a8cdc37ac975607e87bababb6e55abadae423b05d3baefedcff434f634f",
       "size": 13,
       "mode": "replace"
     }
