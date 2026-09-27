@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.27.1",
+  "version": "2026.09.27.2",
   "channel": "stable",
-  "notes": "批量生成/批量替换分镜圈选切换、全选全不选；批量替换按钮蓝色样式",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.1/",
+  "notes": "云端ComfyUI累计代码补丁(H3/Qwen/参考图链路同步)；一键更新支持云端SSH自动部署；GPU告警仅按显存占用；资产/音频批量删除ESC退出；AI制图模型显示文件夹名+精度",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.2/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "443f2e93e7c19578be3eea569d0b7b5ec3fe20fc5ceb524dd1853da08097e7af",
-      "size": 4531573,
+      "sha256": "741e8e798c70675543e734a6d2e8ca90f9c416373fad2005a18d62724e7ef776",
+      "size": 4516460,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "e67bcea931166c37a0457d400d045ad243c38a57068db4ad93fe8131a1bae0b2",
-      "size": 1369724,
+      "sha256": "b72896fd1bbefedbf5f6364613175b29e57b20116c62badce204472f078c1639",
+      "size": 1369161,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "967a7c9c7c862d14ef8ce3ef0e422a431306a0bd658a107555f1b0b5385fbc16",
-      "size": 112029,
+      "sha256": "3a73834a71cb1e15f74bc4d0e92af19c2072a9b98e28dc7cbc061815bf8350d0",
+      "size": 112186,
       "mode": "replace"
     },
     {
@@ -56,9 +56,14 @@
     },
     {
       "path": "_app_version.txt",
-      "sha256": "5151e248bf65f644a5419ef57f44a6527bf20aa3db9d164701e083bd10f152dd",
+      "sha256": "2e3ecac26f30d8d682f793c523c3aa6c0769a132804ced556731b192219be7ea",
       "size": 13,
       "mode": "replace"
     }
-  ]
+  ],
+  "cloud": {
+    "path": "dist/2026.09.27.2/cloud_comfy_update_2026.09.27.2.tar.gz",
+    "sha256": "d5a79bf10facc69dfbeb7a08f9f87b4d37132e5b74ae46ea52516bfa7b4d5ff6",
+    "size": 253541
+  }
 }
