@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.27.3",
+  "version": "2026.09.27.4",
   "channel": "stable",
-  "notes": "双卡显存告警(本机+云端,占用>=97%弹窗,可分别停止); 镜像站上传修复软链stat -L(兼容仙公只读软链); 云部署验证SSH状态红绿显示",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.3/",
+  "notes": "一键更新下载源国内优先(ghproxy先行)并缩短卡死超时,无VPN不再卡在38%; 其余同27.3(双卡显存告警/镜像站软链修复/验证SSH红绿)",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.4/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "174cfc39155f4cbe802d453881a9abbf2848d3d4a7d6173aea2040677cbc08c1",
-      "size": 4520895,
+      "sha256": "3bdde2178a2480c64573c56288f865bfe0ead99bb6bb29667fae2f74d23badcd",
+      "size": 4553446,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "e0b28aea6e35a6011444067a3fe87c9f9254029dbcde71b0cb3f1f849afd7307",
-      "size": 1362473,
+      "sha256": "b9a6ee0e7509c22b45af5280a46b0d3531d9cb89f7df802b7016a92b1304580f",
+      "size": 1363752,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "4b306bdc88ef919dc08981b4eb069560ebb7e8555a852ca755fdc4c984f14be7",
-      "size": 113696,
+      "sha256": "8d2167971d20094e08f62dbc3e5a1563a3eebd1b45d3f3f9fa5caa5226f413ad",
+      "size": 112297,
       "mode": "replace"
     },
     {
@@ -38,25 +38,25 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "400ff8f060fd1c5bae565cd17618eedfc6dedb1b86e928ea7497d1719b659c42",
-      "size": 20355584,
+      "sha256": "278e05ac4b9cc881d3233982e07347fc701737e9f78bd7534d64f446d591c899",
+      "size": 20356096,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "1e329179e1a87d04bf9e8f0bc0d389dcf79ac4e71209fc3fec1865f78d4378f6",
+      "sha256": "acdefaf828adae3e19ffe78eec56ae244bf0598efce6b62f5d4d7d34ab0ddb53",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "88ca2a0700112bf38193c4f127b72e264378bb63110f073273254baf1c97414b",
+      "sha256": "2db28730bbbc97e334985434b193d5d91258fdd9f32b738b85d5716d741a851c",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "ec5d31acd2cdd02cdd59d05a50cef4abaaf178c1f7d8c35cc9c927d3588809e6",
+      "sha256": "be1e652476c77e684cf56057abc2dd7cc9fd4dd66ea95ac4efa675808cd4faba",
       "size": 13,
       "mode": "replace"
     }
