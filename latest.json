@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.28.3",
+  "version": "2026.09.28.4",
   "channel": "stable",
-  "notes": "老用户一键更新后自动检测本地 Qwen21 节点缺失并提示补齐；本地/云端均自动覆盖这 10 个节点文件",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.3/",
+  "notes": "修复卡片/六段模式被旧正文误判、检查器六段文案竖排渲染；本地/云端均自动覆盖 Qwen21 节点文件",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.4/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "7a14dffd638154a2d08514dc59f2d9d4a4bb4caf26b241a54af6675947f64633",
-      "size": 4582694,
+      "sha256": "74a78bc54f9af1863f144451b2001dca49988e0981227804dbdb9c5835d2aa11",
+      "size": 4574878,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "81746d394d809aaeb40827e926fce12d4a55866439bbe5b264db7d04cf413c29",
-      "size": 1360807,
+      "sha256": "083fe216d2f7f574cab11875e831e5ce7a6880d42c4233597e05cf361d662ab6",
+      "size": 1365889,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "828fe623924bb9d01d9a4fbfac71724c39638f8a770f2bc4919f9dea4f8bc158",
-      "size": 112356,
+      "sha256": "fd69a28c9c4936a1fda9d0dc83f499e6830a93b5a839261da2b214fe17369581",
+      "size": 113429,
       "mode": "replace"
     },
     {
@@ -38,25 +38,25 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "5e18d85f1598b133bb75608c1e02f72a3a67f3177adc3c81a090bb9ce874ad74",
-      "size": 20476416,
+      "sha256": "bba1a93d976f19240cb152e55731f73a7700a41adf2aa301770c7db6673d7cdc",
+      "size": 20489728,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "69c1623ce92fa17d38c9fc60766a4077aeeda64a47b250036d451f5e3ee1d35d",
+      "sha256": "8c6a4d5aa9483c871159aa5d8bbabf63a0611ae6d83f8e1c0889f678ffd4613e",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "8221b5c00ae1a611b41febbe435eb9f4ac6734c634c013431ecb8c527a79edbb",
+      "sha256": "a530eaa34042ebda2c783362c43f6ee177a4221b638087de65b9f72b5eaf38eb",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "ce6231dfe9337b9030d7112ee53b5cce07671058bb28b0a1915f8f8b363d2d5e",
+      "sha256": "3b99f2c5c905f362694e3739577ad1fec4264b36a3d5564a621b5e043fb8b7c7",
       "size": 13,
       "mode": "replace"
     }
@@ -124,8 +124,8 @@
     }
   ],
   "cloud": {
-    "path": "dist/2026.09.28.3/cloud_comfy_update_2026.09.28.3.tar.gz",
-    "sha256": "5d68973c5d3a8da9dfd4bdfed13a2e68c091c094a8f67ac7ec96932324496912",
+    "path": "dist/2026.09.28.4/cloud_comfy_update_2026.09.28.4.tar.gz",
+    "sha256": "58bcbbac8d9da781037b3161ae510847a71951fd5d43d889d250d062ebe257b3",
     "size": 103251
   }
 }
