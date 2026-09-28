@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.27.7",
+  "version": "2026.09.28.1",
   "channel": "stable",
-  "notes": "无VPN一键更新提速 + 云端增量代码更新(1个节点文件)",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.27.7/",
+  "notes": "修复 Qwen Image 2.1 节点缺失/WanVAE image_channels 报错；本地修复包 + 云端节点增量；批量生成失效 latent 过滤",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.1/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "295901f974087ebd9e3602bbf7506939d3bdb1687c78c22609b5334f8c96ef85",
-      "size": 4533036,
+      "sha256": "14630ef4086e6a58ce76cf8541081cd370dd0bb2d01bf115c4f4897a2f580447",
+      "size": 4575233,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "413b5498c7cf8855cf83138800714d95c88415d292bf21c42a17957e8d86ec93",
-      "size": 1361970,
+      "sha256": "446f4004b0bb3ee209e5c47cc4037124845fb8d375377feb79b5269a7ae82fbe",
+      "size": 1366601,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "354822bca6f5d0fdc3e03ea4ea963581fa64698f785fadb65a9f8d3163602c3e",
-      "size": 112640,
+      "sha256": "7861fc13f9f07e5a6892ad2bba6c6ec622734b0b45e1ceeceacc256559cab1dd",
+      "size": 112652,
       "mode": "replace"
     },
     {
@@ -38,32 +38,32 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "ba6749c9d64563e29aa88a9acb09ddda959641ea7360b0ba1cbf28aa83c7513e",
-      "size": 20383744,
+      "sha256": "8405faf3080d0d9978340a6cbc35a6ccd3e4ad6e25e60cfa60248e3b16ee479d",
+      "size": 20436992,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "b762427547e02888560e0149d42e0665430646e19c736c821442472afc69e694",
+      "sha256": "d6334e9ce0b4b724005573e7d2f36802a394dbd6be02bedb3eb5df04a320fc62",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "4280f5a7ab2ffc54fd68fc60ce792587fb7023fadd74a25644f97b24889a3ef7",
+      "sha256": "cfd601fe1b32a5b9b0c54dae9d4fcdbf1f6eaf6611c7ecce7781f72ee97ee29a",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "dd449a8cdc37ac975607e87bababb6e55abadae423b05d3baefedcff434f634f",
+      "sha256": "14f5d743c953446cf3818d428c0d9cbd38928170e0117ce185fbb267b937b165",
       "size": 13,
       "mode": "replace"
     }
   ],
   "cloud": {
-    "path": "dist/2026.09.27.7/cloud_comfy_update_2026.09.27.7.tar.gz",
-    "sha256": "f3eb30775261120475580a67f396bfc83578a65a47eff3b2c2efa218248e8da6",
-    "size": 4761
+    "path": "dist/2026.09.28.1/cloud_comfy_update_2026.09.28.1.tar.gz",
+    "sha256": "8ee9552e47322838f45194b933b6e4609924579a4624b0b5c046c44ac8068619",
+    "size": 103251
   }
 }
