@@ -1,15 +1,15 @@
 {
-  "version": "2026.09.28.4",
+  "version": "2026.09.28.5",
   "channel": "stable",
   "notes": "修复卡片/六段模式被旧正文误判、检查器六段文案竖排渲染；本地/云端均自动覆盖 Qwen21 节点文件；合成完整视频分镜间不再黑场（短于槽位的镜头用上一镜尾帧冻结补齐）；AI编剧接入提示、编剧对话与批量生成界面修复",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.4/",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.5/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "a4773ab49bb2a3a08b5a22f9a89b5da6b0ea21b67950336525118453cf251555",
-      "size": 4659307,
+      "sha256": "219ad27793fc0741596b86cf1dac32315965504a688d0629a25594025e3aa5f5",
+      "size": 4652998,
       "mode": "replace"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "path": "_app_version.txt",
-      "sha256": "3b99f2c5c905f362694e3739577ad1fec4264b36a3d5564a621b5e043fb8b7c7",
+      "sha256": "ae53bc136360e537042a3457220862a79e62fc9fa8a3a74e3fb6c7642afbce81",
       "size": 13,
       "mode": "replace"
     }
@@ -124,7 +124,7 @@
     }
   ],
   "cloud": {
-    "path": "dist/2026.09.28.4/cloud_comfy_update_2026.09.28.4.tar.gz",
+    "path": "dist/2026.09.28.5/cloud_comfy_update_2026.09.28.5.tar.gz",
     "sha256": "58bcbbac8d9da781037b3161ae510847a71951fd5d43d889d250d062ebe257b3",
     "size": 103251
   }
