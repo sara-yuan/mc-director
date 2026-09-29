@@ -8,20 +8,20 @@
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "219ad27793fc0741596b86cf1dac32315965504a688d0629a25594025e3aa5f5",
-      "size": 4652998,
+      "sha256": "0c7f295245d4f320eed15aab8b480a7eae9212cbfc8b105703bf6d6edf0bb684",
+      "size": 4660194,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "b65160d230f85fc00a9716be1d1800b9e556b98be5ff987c4d1ec94e42754f4c",
-      "size": 1366015,
+      "sha256": "c01a3fd2c6f486a763ce39090793e907528e1587f85484ebe8fc3f9f9c50c374",
+      "size": 1366058,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "e5bf3ef6ffb74e6cbaec5a110521ad810fecc690fdce25556c20f4bb6a545963",
-      "size": 112424,
+      "sha256": "ddbd230ab4b90b407b01df403fa0af40e82476e142bf7fccba0bf58c574cb5fd",
+      "size": 111994,
       "mode": "replace"
     },
     {
@@ -38,19 +38,19 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "f78e2235fbf3acd2198a68225b453e5a63ede30016c9b8f975412a3c92ca350e",
+      "sha256": "70e1ac012b72670bfd6043691ef91ebee6f3725ecc504f727d25299c6be5c79e",
       "size": 20811776,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "0424925547b56c1322d64fa2bbdbdffd73500067fe88a48a891efdbd0d397b43",
+      "sha256": "20df75f3a755ed8753ff785b016b8b2c67c5d22a3e7b90e82ee92ab17ee1891b",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "a97df3b3b69fe93da4c7a3201da3d3419684914d9a20f334c39401eee0e827ba",
+      "sha256": "18bebf3da766ed91a7a53951e6ea1e04c6a45ca5281c777b48a36119b3448c78",
       "size": 64,
       "mode": "deferred_new"
     },
