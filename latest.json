@@ -1,27 +1,27 @@
 {
   "version": "2026.09.28.4",
   "channel": "stable",
-  "notes": "修复卡片/六段模式被旧正文误判、检查器六段文案竖排渲染；本地/云端均自动覆盖 Qwen21 节点文件；合成完整视频分镜间不再黑场（短于槽位的镜头用上一镜尾帧冻结补齐）",
+  "notes": "修复卡片/六段模式被旧正文误判、检查器六段文案竖排渲染；本地/云端均自动覆盖 Qwen21 节点文件；合成完整视频分镜间不再黑场（短于槽位的镜头用上一镜尾帧冻结补齐）；AI编剧接入提示、编剧对话与批量生成界面修复",
   "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.4/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "74a78bc54f9af1863f144451b2001dca49988e0981227804dbdb9c5835d2aa11",
-      "size": 4574878,
+      "sha256": "a4773ab49bb2a3a08b5a22f9a89b5da6b0ea21b67950336525118453cf251555",
+      "size": 4659307,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "083fe216d2f7f574cab11875e831e5ce7a6880d42c4233597e05cf361d662ab6",
-      "size": 1365889,
+      "sha256": "b65160d230f85fc00a9716be1d1800b9e556b98be5ff987c4d1ec94e42754f4c",
+      "size": 1366015,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "fd69a28c9c4936a1fda9d0dc83f499e6830a93b5a839261da2b214fe17369581",
-      "size": 113429,
+      "sha256": "e5bf3ef6ffb74e6cbaec5a110521ad810fecc690fdce25556c20f4bb6a545963",
+      "size": 112424,
       "mode": "replace"
     },
     {
