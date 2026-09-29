@@ -7,17 +7,21 @@ description: 通过本地 HTTP Agent API（支持本地/云端推理）操作墨
 
 本文件让外部 Agent 不需要理解导演台页面，就能安全地写剧本、创建项目、单镜/批量生成视频、AI 制图和查询状态。
 
-生成视频前，必须先读取并遵守 H3 官方 Prompt 硬规则：`$ROOT\agent_files\h3_skills\SKILL.md` 第 6 节（`$ROOT\base\docs\h3_skills\SKILL.md` 是同内容副本）。无配乐必须写 `non_diegetic_music: N/A`，不能写 “No background music, no melody, no score.” 这类规则描述；普通无音乐不是静音，`overall_soundscape` 仍写环境声。
+生成视频前，必须先读取并遵守 H3 官方 Prompt 硬规则：源码版读 `$ROOT\base\docs\h3_skills\SKILL.md`，编译交付版读 `$ROOT\agent_files\h3_skills\SKILL.md`（两份内容一致），统一看第 6 节。无配乐必须写 `non_diegetic_music: N/A`，不能写 “No background music, no melody, no score.” 这类规则描述；普通无音乐不是静音，`overall_soundscape` 仍写环境声。
 
 ## 0. 定位项目
 
-项目根目录是编译交付版形态：**没有** `base\web_frontend\` 目录，也没有 `.bat`/`.ps1` 启动脚本；前端是 `base\web_frontend_compiled\director.html.enc`（AES 加密），后端是 `base\web_frontend_compiled\server.cp312-win_amd64.pyd`（Cython 编译 + 签名），启动入口是 `exe\墨川导演台-授权启动器\墨川导演台-授权启动器.exe`。
+项目根目录是下面两种形态之一（先判断是哪种，不要假设一定有 `.bat` 启动脚本）：
+
+- 源码版：`启动导演台.bat`、`启动导演台.ps1`、`base\web_frontend\director.html`、`base\web_frontend\server.py`
+- 编译交付版：**没有** `base\web_frontend\` 目录，也没有 `.bat`/`.ps1` 启动脚本；前端是 `base\web_frontend_compiled\director.html.enc`（AES 加密），后端是 `base\web_frontend_compiled\server.cp312-win_amd64.pyd`（Cython 编译 + 签名），启动入口是 `exe\墨川导演台-授权启动器\墨川导演台-授权启动器.exe`
 
 不要把盘符写死。新机器可这样搜索：
 
 ```powershell
 foreach ($d in (Get-PSDrive -PSProvider FileSystem)) {
   where.exe /R "$($d.Root)" "server.cp312-win_amd64.pyd" 2>$null
+  where.exe /R "$($d.Root)" "启动导演台.bat" 2>$null
 }
 ```
 
@@ -75,6 +79,10 @@ X-Agent-Token: <token>
 | AI 配音生成 | `POST /api/agent/v1/tts/generate` |
 | AI 配音状态 | `GET /api/agent/v1/tts/status` |
 | 资产列表 | `GET /api/agent/v1/assets` |
+| 创建资产（上传 / 写名 / 绑定剧本） | `POST /api/agent/v1/assets` |
+| 资产绑定多个剧本 | `POST /api/agent/v1/assets/batch_associate` |
+| 本地文件夹批量导入资产 | `POST /api/agent/v1/assets/import_folder` |
+| 资产改名 | `POST /api/agent/v1/assets/rename` |
 | 日志 | `GET /api/agent/v1/logs?kind=comfyui` |
 | 通知 | `GET /api/agent/v1/notifications` |
 
@@ -227,6 +235,58 @@ Invoke-RestMethod -Headers $headers -Uri "http://127.0.0.1:8199/api/agent/v1/tts
 ```
 
 
+### 3.8 上传资产（图片 / 参考视频）
+
+资产必须先「创建记录」并绑定到剧本，写进分镜的 `@资产名` 才会命中参考图。**不要把图片 URL 直接写进分镜，也不要只用 `GET /api/agent/v1/assets` 查列表**。
+
+推荐用 `POST /api/agent/v1/assets` 一次完成「复制本地文件 + 写名称 + 绑定剧本」：
+
+```powershell
+$body = @{
+  name = "张三"
+  type = "character"   # character 人物 / scene 场景 / prop 道具 / video 参考视频
+  scriptId = $scriptId # 绑定到目标剧本；不传 = 未关联剧本
+  desc = "28岁男性，短发，方脸，深色夹克"
+  images = @(
+    @{ path = "C:\refs\zhangsan_face.jpg"; tag = "特写图" },
+    @{ path = "C:\refs\zhangsan_full.jpg"; tag = "全身" }
+  )
+} | ConvertTo-Json -Depth 10
+Invoke-RestMethod -Method Post -Headers $headers -ContentType "application/json" -Body $body -Uri "http://127.0.0.1:8199/api/agent/v1/assets"
+```
+
+- `images[].path`：本地图片绝对路径，后端会复制进资产目录；`images[].url`：使用已上传的 `/director_uploads/...` 地址（图片或参考视频）。
+- `name` 必填、不超过 60 字、不能含 `@` 或换行；同一剧本作用域内不允许同名资产（同名会导致 `@名称` 串脸），冲突会返回 `409`，换名重试即可。
+- `type` 也支持中文：`角色 / 场景 / 道具 / 参考视频`。
+
+把已有资产批量绑定到多个剧本：
+
+```powershell
+$body = @{ assetIds = @("a_xxx"); scriptIds = @("s_a", "s_b") } | ConvertTo-Json -Depth 10
+Invoke-RestMethod -Method Post -Headers $headers -ContentType "application/json" -Body $body -Uri "http://127.0.0.1:8199/api/agent/v1/assets/batch_associate"
+```
+
+从本地已分类文件夹批量导入（自动按文件名命名并绑定剧本）：
+
+```powershell
+$body = @{
+  scriptId = $scriptId
+  folders = @(
+    @{ path = "C:\refs\角色"; category = "character" },
+    @{ path = "C:\refs\场景"; category = "scene" }
+  )
+} | ConvertTo-Json -Depth 10
+Invoke-RestMethod -Method Post -Headers $headers -ContentType "application/json" -Body $body -Uri "http://127.0.0.1:8199/api/agent/v1/assets/import_folder"
+```
+
+资产改名（会同步替换剧本/分镜里的旧名引用）：
+
+```powershell
+$body = @{ assetId = "a_xxx"; name = "张三改" } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Headers $headers -ContentType "application/json" -Body $body -Uri "http://127.0.0.1:8199/api/agent/v1/assets/rename"
+```
+
+
 ## 4. 剧本 JSON 强制规范（AI 编剧 / Agent 写剧本必读）
 
 **写剧本禁止用 `POST /api/agent/v1/state` 整份覆盖。**
@@ -315,7 +375,7 @@ Invoke-RestMethod -Headers $headers -Uri "http://127.0.0.1:8199/api/agent/v1/tts
   H3 只认 `<Picture N>` 的挂图顺序，不写绑定就会出现「衣服像、脸不像 / 换人 / 双胞胎」；`<Picture N>` 编号必须与实际挂图顺序一致。
 - **六段式台词**：`<d>[Chinese] 台词</d>`；说话人写在 `<d>` 外面（`<Subject 1> (S1) says, <d>…</d>`）；
   电话音 / 画外音 / 旁白必须写发声源与稳定 `(Sx)`，同一通电话跨镜用同一个编号。
-- 六段式完整规则、草稿示例与翻译接口见 `$ROOT\agent_files\h3_skills\SKILL.md` 第 6.2 节（`$ROOT\base\docs\h3_skills\SKILL.md` 同内容）。
+- 六段式完整规则、草稿示例与翻译接口见 H3 官方规则第 6.2 节：源码版 `$ROOT\base\docs\h3_skills\SKILL.md`，编译交付版 `$ROOT\agent_files\h3_skills\SKILL.md`；两份内容一致，任选其一即可。
 
 ## 5. 重要规则
 
@@ -326,7 +386,7 @@ Invoke-RestMethod -Headers $headers -Uri "http://127.0.0.1:8199/api/agent/v1/tts
 - 批量生成必须串行，不要并发提交多个分镜。
 - 生成中不要重启服务；如服务已重启，先查状态再决定是否重新提交。
 - 有 `shotCards` 时以镜头段为准；旧八行提示词只作为无 `shotCards` 时的回退。
-- 新装或 exe 启动后，服务应监听 `127.0.0.1:8199`；如果端口不通，看 `$ROOT\director_launcher.log` 与 `$ROOT\base\web_frontend_compiled\_app_update.log`。
+- 新装或 exe 启动后，服务应监听 `127.0.0.1:8199`；如果端口不通，交付版看 `$ROOT\director_launcher.log` 与 `$ROOT\base\web_frontend_compiled\_app_update.log`，源码版看 `启动导演台.ps1` 或后端日志。
 
-更多数据模型、音频、首尾帧、导入导出与排障：见 `$ROOT\agent_files\SKILL.md`。
+更多数据模型、音频、首尾帧、导入导出与排障：源码环境见 `$ROOT\.codex\skills\director-shot-filler\SKILL.md`；编译交付版见 `$ROOT\agent_files\SKILL.md`。
 
