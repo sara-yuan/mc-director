@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.28.5",
+  "version": "2026.09.28.6",
   "channel": "stable",
-  "notes": "修复卡片/六段模式被旧正文误判、检查器六段文案竖排渲染；本地/云端均自动覆盖 Qwen21 节点文件；合成完整视频分镜间不再黑场（短于槽位的镜头用上一镜尾帧冻结补齐）；AI编剧接入提示、编剧对话与批量生成界面修复",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.5/",
+  "notes": "一键更新改为按文件哈希增量：同版本热修也能检测，已一致文件自动跳过，不再全量重下",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.6/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "2f02f069799ba5d99853a41ec5709361d4edfaca54a3472f0e699fbaac5b3373",
-      "size": 4661635,
+      "sha256": "f3c98c4e29167bb7ced2f334197c481ed55ac55b97427604bb5f979c5a9ea969",
+      "size": 4669519,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "c01a3fd2c6f486a763ce39090793e907528e1587f85484ebe8fc3f9f9c50c374",
-      "size": 1366058,
+      "sha256": "99bab6723f1c2146442d13f3c7c4105cac2b2a91b56e1150838b7a2044036463",
+      "size": 1368720,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "ddbd230ab4b90b407b01df403fa0af40e82476e142bf7fccba0bf58c574cb5fd",
-      "size": 111994,
+      "sha256": "cdd6793f68a8d63ee5dfe03bb9b0e92cf6a6beb597220fbef5b0a76d2cadd3b8",
+      "size": 113024,
       "mode": "replace"
     },
     {
@@ -38,25 +38,25 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "70e1ac012b72670bfd6043691ef91ebee6f3725ecc504f727d25299c6be5c79e",
-      "size": 20811776,
+      "sha256": "57ea65d7303d610c53426ccccde071d089b9bcbeb2e8eed1ae92b2e5a595a429",
+      "size": 20856320,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "20df75f3a755ed8753ff785b016b8b2c67c5d22a3e7b90e82ee92ab17ee1891b",
+      "sha256": "8135bf0ec0042698749f5503ac8ed251e5f8275f930836cf40c3df24e776e5c3",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "18bebf3da766ed91a7a53951e6ea1e04c6a45ca5281c777b48a36119b3448c78",
+      "sha256": "24dee76bc544c2ebb671fa7fba0ed404ba4bcf22de40047844a283f38f6295de",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "ae53bc136360e537042a3457220862a79e62fc9fa8a3a74e3fb6c7642afbce81",
+      "sha256": "968785034859961605418e4194c212c6761752c221e5d3b4cdda15f82fe98e55",
       "size": 13,
       "mode": "replace"
     }
