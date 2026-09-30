@@ -8,20 +8,20 @@
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "f3c98c4e29167bb7ced2f334197c481ed55ac55b97427604bb5f979c5a9ea969",
-      "size": 4669519,
+      "sha256": "f7533c174f419a0fcc17ca07916f4038d2b9a1012069834b5b0f3bb57b97f8cd",
+      "size": 4651658,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "99bab6723f1c2146442d13f3c7c4105cac2b2a91b56e1150838b7a2044036463",
-      "size": 1368720,
+      "sha256": "0d23dfa5cc031b0a3572134fb237ef618f3e5efc6d4431529857b63ca9e8f63d",
+      "size": 1362227,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "cdd6793f68a8d63ee5dfe03bb9b0e92cf6a6beb597220fbef5b0a76d2cadd3b8",
-      "size": 113024,
+      "sha256": "a3334c04fd8b27b28b812f52c3e710d9470baa390983d09fa7064541e646b620",
+      "size": 113352,
       "mode": "replace"
     },
     {
@@ -38,19 +38,19 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "57ea65d7303d610c53426ccccde071d089b9bcbeb2e8eed1ae92b2e5a595a429",
-      "size": 20856320,
+      "sha256": "941c56749ea6b52f14063aeeb44bc4567d2d0ab2c8b65a32853f69a1affde325",
+      "size": 20859904,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "8135bf0ec0042698749f5503ac8ed251e5f8275f930836cf40c3df24e776e5c3",
+      "sha256": "4295958870243f909841469f361a6edc0281a70d104327832fda3c3b20c91081",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "24dee76bc544c2ebb671fa7fba0ed404ba4bcf22de40047844a283f38f6295de",
+      "sha256": "2218f3a5e50fab2cd8c55afa46dbca71222c75432cf9978fd350220d5af2454e",
       "size": 64,
       "mode": "deferred_new"
     },
@@ -112,8 +112,8 @@
     },
     {
       "path": "comfy/sd.py",
-      "sha256": "ea776ac0b857ee7e4f933a613d89fd8992272877ba4271af0dc261e4c87c1ff6",
-      "size": 134184,
+      "sha256": "263ee37a4a952710b585719f295318b4906420bbffd3e3d4410ef5b4383fddbd",
+      "size": 134525,
       "mode": "replace"
     },
     {
