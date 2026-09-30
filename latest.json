@@ -112,8 +112,8 @@
     },
     {
       "path": "comfy/sd.py",
-      "sha256": "ea776ac0b857ee7e4f933a613d89fd8992272877ba4271af0dc261e4c87c1ff6",
-      "size": 134184,
+      "sha256": "263ee37a4a952710b585719f295318b4906420bbffd3e3d4410ef5b4383fddbd",
+      "size": 134525,
       "mode": "replace"
     },
     {

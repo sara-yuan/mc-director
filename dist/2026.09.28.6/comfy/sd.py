@@ -1977,11 +1977,16 @@ def load_checkpoint(config_path=None, ckpt_path=None, output_vae=True, output_cl
 
     if "parameterization" in model_config_params:
         if model_config_params["parameterization"] == "v":
-            m = model.clone()
-            class ModelSamplingAdvanced(comfy.model_sampling.ModelSamplingDiscrete, comfy.model_sampling.V_PREDICTION):
+            if isinstance(getattr(model.model, "model_sampling", None), comfy.model_sampling.ModelSamplingAV):
+                # FLOW_AV already uses ModelSamplingAV (audio_scale). Do not replace it
+                # with the discrete V-prediction sampler, which lacks audio_scale.
                 pass
-            m.add_object_patch("model_sampling", ModelSamplingAdvanced(model.model.model_config))
-            model = m
+            else:
+                m = model.clone()
+                class ModelSamplingAdvanced(comfy.model_sampling.ModelSamplingDiscrete, comfy.model_sampling.V_PREDICTION):
+                    pass
+                m.add_object_patch("model_sampling", ModelSamplingAdvanced(model.model.model_config))
+                model = m
 
     layer_idx = clip_config.get("params", {}).get("layer_idx", None)
     if layer_idx is not None:
