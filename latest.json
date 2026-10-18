@@ -67,9 +67,9 @@
       "mode": "replace"
     },
     {
-      "path": "agent_docs_2026.10.18.zip",
-      "sha256": "4671cfce4113c18c5cb128a861e0587fc6d88ef824814f0725db6a72d66d22de",
-      "size": 107542,
+      "path": "agent_docs_2026.10.18.1.zip",
+      "sha256": "fd7fd40b74d68297f9cea5e02ec0cc71c16c52ac375bdde60d0d7dacc472110b",
+      "size": 23339780,
       "mode": "replace"
     }
   ],
