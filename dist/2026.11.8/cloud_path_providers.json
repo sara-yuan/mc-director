@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "_note": "ASCII only on purpose: this file is machine-read. Chinese text shows as mojibake in GBK-default tools (e.g. Windows PowerShell 5.1 Get-Content).",
+  "providers": [
+    {
+      "id": "xiangongyun",
+      "match": "x-gpu.com",
+      "preferredBases": [
+        "/root/mcminimaxh3"
+      ],
+      "minAvailMb": 160000,
+      "comment": "XianGong Cloud prefers /root/mcminimaxh3 only; generic scanner will verify and pick /mnt only when it is a real separate data disk. Add new vendors here; no need to ship a new exe."
+    },
+    {
+      "id": "lightcc",
+      "match": "lightcc.cloud",
+      "preferredBases": [
+        "/root/lightcc-tmp/mcminimaxh3"
+      ],
+      "minAvailMb": 5000,
+      "comment": "LightCC auto-expanding data disk is /root/lightcc-tmp. Never deploy to /mnt, which is the 30G container overlay."
+    },
+    {
+      "id": "gpuhome",
+      "match": "gpuhome.cc",
+      "preferredBases": [
+        "/root/rivermind-data/mcminimaxh3"
+      ],
+      "minAvailMb": 160000,
+      "comment": "ZhiChuan Cloud (gpuhome.cc) data disk is /root/rivermind-data; system disk / is a 30G overlay, never deploy there."
+    }
+  ]
+}

@@ -64,6 +64,33 @@ foreach ($d in (Get-PSDrive -PSProvider FileSystem)) {
 - **六段式台词**：台词固定写在 `<d>[语种] 台词</d>`（如 `<d>[Chinese] 让开！</d>`）；说话人写在 `<d>` 外面，例如 `<Subject 1> (S1) says, <d>…</d>`。电话音 / 画外音 / 旁白必须写出发声源与稳定的 `(Sx)` 编号（如 `a serious male voice coming through the phone (S2) says: <d>…</d>`），漏写时 H3 会把这句台词派给画面里那个人。
 - 两种模式的完整规范（含示例与翻译接口）见 H3 官方规则第 6.2 节：源码版 `$ROOT\base\docs\h3_skills\SKILL.md`；编译交付版 `$ROOT\agent_files\h3_skills\SKILL.md`（内容一致）。
 
+## H3 官方 Skill 选择（写分镜前必须先问用户）
+
+导演台内置 9 个 MiniMax H3 官方 skill：1 个写作规范 + 8 个风格生成器。
+
+- 写作规范：`h3-prompt-writing`（H3 提示词规范）
+- 风格生成器：
+  - `minimalist-product-ad-generator`：极简产品广告
+  - `3d-animation-short-generator`：3D 动画短片
+  - `papercraft-stop-motion-explainer`：纸艺定格科普视频
+  - `brand-promo-video-generator`：品牌宣传短片
+  - `music-video-subtitle-generator`：音乐 MV 动态字幕
+  - `co-op-game-intro-generator`：双人游戏开场视频
+  - `paper-collage-explainer-generator`：纸拼贴讲解动画
+  - `handdrawn-live-video-generator`：手绘实拍融合视频
+
+强制流程：
+1. 外部 Agent 或 AI 编剧在用户要求“写剧本 / 出分镜”时，先按题材推荐 1-2 个最合适的官方 skill，并让用户在 9 个里明确选择；用户没有确认前，不要写 `style` / `sceneEnv` / `directorNote`。
+2. 用户也可以说“不用 skill / 写实风”，此时 skill 留空，按现代写实默认风格写。
+3. 用户确认后，把该 skill 作为剧本默认，并读取它的官方完整文档（`SKILL.md` / `SKILL.cn.md` / `references`）作为整段提示词模板：风格 skill 不只看 `style / sceneEnv / directorNote` 三行，要逐段套用官方画面、声音、镜头与字段顺序；写作规范类 skill 用于按官方规范写/改写完整 H3 提示词。全文会随本轮上下文注入，不要截断或只摘要。
+4. 同一部剧通常只选一个风格生成器，禁止擅自混用多个风格 skill。
+5. 回复用户时，必须告诉用户这些官方文档在哪里看：
+   - 导演台页面：分镜编辑顶部 → `Skill 库` → 每张卡点 `查看文档`（含官方演示视频）。
+   - 本地目录：`$ROOT\base\docs\h3_skills\official\<skill_id>\SKILL.cn.md`（源码版与交付版路径相同；`h3-prompt-writing` 无中文版，直接看同目录 `SKILL.md`）。
+   - 官方原文：`https://github.com/MiniMax-AI/MiniMax-H3/blob/main/skills/<skill_id>/SKILL.md`。
+
+机器可读的 skill 清单可请求 `GET http://127.0.0.1:8199/api/director/h3-skills`（返回 `skills[].id/nameZh/preset/demoUrl/githubUrl`），单个 skill 完整文档用 `GET /api/director/h3-skills/{skill_id}`。
+
 ## 本地 / 云端推理模式
 
 - 导演台支持 `local` 与 `cloud` 两种推理位置，`local` 走本机 `127.0.0.1:8188`，`cloud` 走 SSH 隧道到已部署云端 ComfyUI。
@@ -76,6 +103,7 @@ foreach ($d in (Get-PSDrive -PSProvider FileSystem)) {
 ## 概念与命名澄清（Agent 必读）
 
 - `shots` 数组长度 = 实际“分镜”数量。一个 `shot` 对应一个分镜；`shotCards` 是单个分镜内部的“镜头段/子镜头”，不是新分镜。
+- 剧本支持“剧集”分组：`scriptShots[].episode` 为整数剧集号，默认 `1`（所有既有分镜都在第一集）；`scriptShots[].num` 写作 `剧集.镜序号`（如 `"1.3"`、`"2.3"`）。同一剧集内镜序号从 1 连续递增；复制/插入只对同一剧集内后续镜号 `+1`，其他剧集不受影响。写回 `scriptShots` 必须带 `episode` 且与 `num` 一致。
 - 用户说“1 个分镜 + 多个镜头段”时，结果是 `len(shots) == 1`，多个 `shotCards` 都放在该分镜内；禁止把镜头段数量当成分镜数量。用户说“3 个分镜”时才是 3 个 `shots`。这不是写死一个分镜，最新明确指令优先。
 - 目标分镜数以后端最新意图解析：从最近一条用户消息向前扫描，取用户最后一次明确表达的分镜数量；旧消息里的“12 到 16 个镜头”不会覆盖后来说的“只要一个分镜”。
 - 云端生成回拉后的最终本地文件名规范：`<项目slug>_<分镜序号:05d>_<版本:05d>_.mp4`，统一版本号：首版 `项目名_00001_00001_.mp4`，后续 `项目名_00001_00002_.mp4`。云端 ComfyUI 首次输出可能带自己的保存计数，不要用末尾保存计数判断分镜序号。

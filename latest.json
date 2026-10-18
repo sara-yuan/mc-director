@@ -1,27 +1,27 @@
 {
-  "version": "2026.09.28.6",
+  "version": "2026.11.8",
   "channel": "stable",
-  "notes": "一键更新改为按文件哈希增量：同版本热修也能检测，已一致文件自动跳过，不再全量重下",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/main/dist/2026.09.28.6/",
+  "notes": "2026.10.18 更新：工具箱 UI；人脸修复；SeedVR2 超分；FLUX.2/Krea2 扫描；skill/agent 分集分镜文档",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/beta-2026.11.8/dist/2026.11.8/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
     {
       "path": "director.html.enc",
-      "sha256": "f7533c174f419a0fcc17ca07916f4038d2b9a1012069834b5b0f3bb57b97f8cd",
-      "size": 4651658,
+      "sha256": "8ebb44df5769c56ad822f17890f2361b80e123f7a0e44fff82070649420e0879",
+      "size": 5358376,
       "mode": "replace"
     },
     {
       "path": "director_logpopup.html.enc",
-      "sha256": "0d23dfa5cc031b0a3572134fb237ef618f3e5efc6d4431529857b63ca9e8f63d",
-      "size": 1362227,
+      "sha256": "b2dbe1f19e84cda4ddbd5fe0387a1e21c23b51215eac7f1443f518bb59c897f0",
+      "size": 1362507,
       "mode": "replace"
     },
     {
       "path": "director_web.html.enc",
-      "sha256": "a3334c04fd8b27b28b812f52c3e710d9470baa390983d09fa7064541e646b620",
-      "size": 113352,
+      "sha256": "3771144f57513bd020021e521247928e86d922583502ff84add0c1adac41d6f6",
+      "size": 112445,
       "mode": "replace"
     },
     {
@@ -38,94 +38,45 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "941c56749ea6b52f14063aeeb44bc4567d2d0ab2c8b65a32853f69a1affde325",
-      "size": 20859904,
+      "sha256": "8e19834b921985b967ceebca3626aebe3731859c588b530168b7272a9296823e",
+      "size": 23991808,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "4295958870243f909841469f361a6edc0281a70d104327832fda3c3b20c91081",
+      "sha256": "555bffa12bffdc50ab6a7c68775ed39e6300a8bf68a4544a60ff56be56891953",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "2218f3a5e50fab2cd8c55afa46dbca71222c75432cf9978fd350220d5af2454e",
+      "sha256": "5f511c7e862a43de0cd4837444acd2c731751c58c1ab075537c4f58d2c76450c",
       "size": 64,
       "mode": "deferred_new"
     },
     {
       "path": "_app_version.txt",
-      "sha256": "968785034859961605418e4194c212c6761752c221e5d3b4cdda15f82fe98e55",
-      "size": 13,
+      "sha256": "7150abde5d45222fa170b18124ff041523929c37da85517076192d0562e53d53",
+      "size": 10,
+      "mode": "replace"
+    },
+    {
+      "path": "comfy_code_2026.11.8.zip",
+      "sha256": "60c4adb594aafe8c240b6de867f854468f198e5179c99ac09e83e510ef14e457",
+      "size": 52077590,
+      "mode": "replace"
+    },
+    {
+      "path": "agent_docs_2026.11.8.zip",
+      "sha256": "4671cfce4113c18c5cb128a861e0587fc6d88ef824814f0725db6a72d66d22de",
+      "size": 107542,
       "mode": "replace"
     }
   ],
-  "comfy_files": [
-    {
-      "path": "comfy_extras/nodes_qwen.py",
-      "sha256": "37ac231c30dc3db43aaa8942df6344a1d1b7eb0e02fcea8b312486acc5078b1d",
-      "size": 12003,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/text_encoders/qwen_image21.py",
-      "sha256": "c64016aa703f913859c9afb7efe5d1e5120c8fa2820f9f7acc00792987d39136",
-      "size": 4851,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/ldm/qwen_image21/model.py",
-      "sha256": "81a43c55e2292889d8b77d79cf4cb56fd3dfb717baf5e40f1d31f7700100c039",
-      "size": 19825,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/ldm/wan/vae2_2.py",
-      "sha256": "875cb8c24e8a9a561124067881a4f51b9917e97551f0bc5bb7ce12d5f6c6cfb8",
-      "size": 26379,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/ldm/wan/model_animate2.py",
-      "sha256": "62f5154b5743e4c2070e6dbc7f24695a497dfe99326a0c001147467655af6034",
-      "size": 22606,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/model_base.py",
-      "sha256": "0465d29a444c4aab2289d09788a9669ad2b957ed8143bd868eb36217ea8fdc22",
-      "size": 131434,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/supported_models.py",
-      "sha256": "f0fabccfe295199b17bf6b007d3a3851b016add08e98a307730cd8ece81c7405",
-      "size": 86555,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/model_detection.py",
-      "sha256": "053df83af873a13357d029eb39420c4b8e7be936701e66606689470d7fc8cff6",
-      "size": 90004,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/sd.py",
-      "sha256": "263ee37a4a952710b585719f295318b4906420bbffd3e3d4410ef5b4383fddbd",
-      "size": 134525,
-      "mode": "replace"
-    },
-    {
-      "path": "comfy/latent_formats.py",
-      "sha256": "e2d15c19a9241666afd8398b5c7639cc41120c5cdf8a41ba4fa1d74dc5419208",
-      "size": 45146,
-      "mode": "replace"
-    }
-  ],
+  "comfy_files": [],
   "cloud": {
-    "path": "dist/2026.09.28.5/cloud_comfy_update_2026.09.28.5.tar.gz",
-    "sha256": "58bcbbac8d9da781037b3161ae510847a71951fd5d43d889d250d062ebe257b3",
-    "size": 103251
+    "path": "dist/2026.11.8/cloud_comfy_update_2026118.tar.gz",
+    "sha256": "3bd57d24163ffdc1a6bfbc166162ff33af1d46496f75fe2102cb17ed56e8d54c",
+    "size": 71245729
   }
 }

@@ -122,6 +122,8 @@ $m = Invoke-RestMethod -Headers $headers -Uri "http://127.0.0.1:8199/api/cloudde
 ## 2.2 概念与命名澄清（Agent 必读）
 
 - `shots` 数组长度 = 实际“分镜”数量。一个 `shot` 对应一个分镜；`shotCards` 是单个分镜内部的“镜头段/子镜头”，不是新分镜。
+- 剧本支持“剧集”分组：`scriptShots[].episode` 为整数剧集号，默认 `1`（所有既有分镜都在第一集）；`scriptShots[].num` 写作 `剧集.镜序号`，例如第一集第 3 镜写 `"1.3"`、第二集第 3 镜写 `"2.3"`。同一剧集内 `镜序号` 从 1 连续递增，不允许跳号；新开一集时镜序号从 1 重新开始。
+- 复制/插入分镜只影响同一剧集：例如复制 `2.3` 会生成 `2.4`，原 `2.4/2.5/2.6…` 同集内依次 `+1`，其他剧集不受影响。批量替换、批量翻译、AI 润色均作用于全部剧集；Agent 写回 `scriptShots` 时必须带上 `episode`，并保持 `num` 与 `episode` 一致。
 - 用户说“1 个分镜 + 多个镜头段”时，必须生成 `len(shots) == 1`，并把多个 `shotCards` 放在该分镜内；禁止把镜头段数量当成分镜数量。用户说“3 个分镜”时才是 3 个 `shots`。这不是写死一个分镜，最新明确指令优先。
 - 目标分镜数解析：后端会从最近一条用户消息向前扫描，取用户最后一次明确表达的分镜数量。旧消息里早先的“12 到 16 个镜头”不会覆盖后来说的“只要一个分镜/单分镜/只用一个分镜”。
 - 云端生成回拉后的最终本地文件名规范：`<项目slug>_<分镜序号:05d>_<版本:05d>_.mp4`。首版 `印度壮汉决斗_00001_00001_.mp4`，后续 `印度壮汉决斗_00001_00002_.mp4`。云端 ComfyUI 首次输出可能带自己的保存计数（如 `印度壮汉决斗_00001_00001_.mp4`），不要用末尾保存计数判断分镜序号。
@@ -148,7 +150,7 @@ Invoke-RestMethod -Headers $headers -Uri "http://127.0.0.1:8199/api/agent/v1/hea
 ```powershell
 $body = @{
   messages = @(
-    @{ role = "user"; content = "写一个5分钟港风武打剧本，20个分镜，每个15秒，每个分镜拆成多个镜头段" }
+    @{ role = "user"; content = "写一个5分钟港风武打剧本，20个分镜，每个15秒（单镜最长60秒），每个分镜拆成多个镜头段" }
   )
 } | ConvertTo-Json
 
@@ -343,7 +345,7 @@ Invoke-RestMethod -Method Post -Headers $headers -ContentType "application/json"
 硬性规则：
 
 - 每个 `shot` 必须有 `shotCards`，且所有卡片的时间段首尾相接、总和等于 `dur`，禁止空缺、重叠或只给一个空卡片。
-- 单段不得超过 4 秒：8 秒至少拆 3 段，10-15 秒至少拆 4-5 段，20 秒至少拆 5-6 段。
+- 单段不得超过 4 秒：8 秒至少拆 3 段，10-15 秒至少拆 4-5 段，20 秒至少拆 5-6 段，20-60 秒至少拆 6-15 段（单段仍不超过 4 秒）。
 - 每张 `shotCard` 的 `shotSize / camera / movement / staging / plot / action` 都必须非空；只有 `audioRefs / videoRef / dialogue.line / voiceId` 允许为空。
 - `shotSize` 优先用：大远景、远景、全景、中景、近景、特写、大特写。
 - `camera` 写机位高度与角度，如：平拍、俯拍、仰拍、低机位、高机位、过肩机位、侧面机位。
@@ -376,6 +378,35 @@ Invoke-RestMethod -Method Post -Headers $headers -ContentType "application/json"
 - **六段式台词**：`<d>[Chinese] 台词</d>`；说话人写在 `<d>` 外面（`<Subject 1> (S1) says, <d>…</d>`）；
   电话音 / 画外音 / 旁白必须写发声源与稳定 `(Sx)`，同一通电话跨镜用同一个编号。
 - 六段式完整规则、草稿示例与翻译接口见 H3 官方规则第 6.2 节：源码版 `$ROOT\base\docs\h3_skills\SKILL.md`，编译交付版 `$ROOT\agent_files\h3_skills\SKILL.md`；两份内容一致，任选其一即可。
+
+### 4.2 H3 官方 Skill 选择（写剧本前必须先问用户）
+
+导演台内置 9 个 MiniMax H3 官方 skill：1 个写作规范 + 8 个风格生成器。
+
+- 写作规范：`h3-prompt-writing`（H3 提示词规范）
+- 风格生成器：
+  - `minimalist-product-ad-generator`：极简产品广告
+  - `3d-animation-short-generator`：3D 动画短片
+  - `papercraft-stop-motion-explainer`：纸艺定格科普视频
+  - `brand-promo-video-generator`：品牌宣传短片
+  - `music-video-subtitle-generator`：音乐 MV 动态字幕
+  - `co-op-game-intro-generator`：双人游戏开场视频
+  - `paper-collage-explainer-generator`：纸拼贴讲解动画
+  - `handdrawn-live-video-generator`：手绘实拍融合视频
+
+强制流程：
+1. 用户让你“写剧本 / 出分镜”时，先按题材推荐 1-2 个最合适的官方 skill，并让用户在 9 个里明确选择；用户没有确认前，不要写 `style` / `sceneEnv` / `directorNote`。
+2. 用户也可以说“不用 skill / 写实风”，此时 skill 留空，按现代写实默认风格写。
+3. 用户确认后，把该 skill 作为剧本默认，并读取它的官方完整文档（`SKILL.md` / `SKILL.cn.md` / `references`）作为整段提示词模板：风格 skill 不只看 `style / sceneEnv / directorNote` 三行，要逐段套用官方画面、声音、镜头与字段顺序；写作规范类 skill 用于按官方规范写/改写完整 H3 提示词。全文会随本轮上下文注入，不要截断或只摘要。
+4. 同一部剧通常只选一个风格生成器，禁止擅自混用多个风格 skill。
+5. 回复用户时，必须告诉用户这些官方文档在哪里看：
+   - 导演台页面：分镜编辑顶部 → `Skill 库` → 每张卡点 `查看文档`（含官方演示视频）。
+   - 本地目录：`$ROOT\base\docs\h3_skills\official\<skill_id>\SKILL.cn.md`（源码版与交付版路径相同；`h3-prompt-writing` 无中文版，直接看同目录 `SKILL.md`）。
+   - 官方原文：`https://github.com/MiniMax-AI/MiniMax-H3/blob/main/skills/<skill_id>/SKILL.md`。
+
+机器可读的 skill 清单可请求 `GET http://127.0.0.1:8199/api/director/h3-skills`（返回 `skills[].id/nameZh/preset/demoUrl/githubUrl`），单个 skill 完整文档用 `GET /api/director/h3-skills/{skill_id}`。
+
+> 4.1 与 4.2 是“写剧本前必须连问的两个问题”：先问卡片式/六段式，再问用哪个 H3 Skill。用户两个都确认后，才开始写分镜字段。
 
 ## 5. 重要规则
 
