@@ -1,8 +1,8 @@
 {
-  "version": "2026.11.8",
+  "version": "2026.10.18",
   "channel": "stable",
   "notes": "2026.10.18 更新：工具箱 UI；人脸修复；SeedVR2 超分；FLUX.2/Krea2 扫描；skill/agent 分集分镜文档",
-  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/beta-2026.11.8/dist/2026.11.8/",
+  "base": "https://raw.githubusercontent.com/sara-yuan/mc-director/beta-2026.10.18/dist/2026.10.18/",
   "restart": "launcher",
   "oneshot_clean": [],
   "files": [
@@ -56,18 +56,18 @@
     },
     {
       "path": "_app_version.txt",
-      "sha256": "7150abde5d45222fa170b18124ff041523929c37da85517076192d0562e53d53",
-      "size": 10,
+      "sha256": "40b1289c513417d5044690994ec25b3db14341e72590222a38eb2d572fd46298",
+      "size": 11,
       "mode": "replace"
     },
     {
-      "path": "comfy_code_2026.11.8.zip",
+      "path": "comfy_code_2026.10.18.zip",
       "sha256": "60c4adb594aafe8c240b6de867f854468f198e5179c99ac09e83e510ef14e457",
       "size": 52077590,
       "mode": "replace"
     },
     {
-      "path": "agent_docs_2026.11.8.zip",
+      "path": "agent_docs_2026.10.18.zip",
       "sha256": "4671cfce4113c18c5cb128a861e0587fc6d88ef824814f0725db6a72d66d22de",
       "size": 107542,
       "mode": "replace"
@@ -75,7 +75,7 @@
   ],
   "comfy_files": [],
   "cloud": {
-    "path": "dist/2026.11.8/cloud_comfy_update_2026118.tar.gz",
+    "path": "dist/2026.10.18/cloud_comfy_update_20261018.tar.gz",
     "sha256": "3bd57d24163ffdc1a6bfbc166162ff33af1d46496f75fe2102cb17ed56e8d54c",
     "size": 71245729
   }
