@@ -38,19 +38,19 @@
     },
     {
       "path": "server.cp312-win_amd64.pyd",
-      "sha256": "8e19834b921985b967ceebca3626aebe3731859c588b530168b7272a9296823e",
-      "size": 23991808,
+      "sha256": "21cb2b45f5fed969f015916f775cc42fc4d6f3b648450d9b771a2afab325040f",
+      "size": 23993344,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.json",
-      "sha256": "555bffa12bffdc50ab6a7c68775ed39e6300a8bf68a4544a60ff56be56891953",
+      "sha256": "1c84946f78660f8c6201988caecd17f9a31d831e185669b2e98f1d5e58026089",
       "size": 89,
       "mode": "deferred_new"
     },
     {
       "path": "server_pyd_manifest.sig",
-      "sha256": "5f511c7e862a43de0cd4837444acd2c731751c58c1ab075537c4f58d2c76450c",
+      "sha256": "c1e692694978f654dc735dd47337873f7bc604d3ea95467beda4cc6b4bbcd025",
       "size": 64,
       "mode": "deferred_new"
     },
