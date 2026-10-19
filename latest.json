@@ -62,8 +62,8 @@
     },
     {
       "path": "comfy_code_2026.10.18.zip",
-      "sha256": "60c4adb594aafe8c240b6de867f854468f198e5179c99ac09e83e510ef14e457",
-      "size": 52077590,
+      "sha256": "a38534b46dc3fc9fa35cce0d147a81e07343adeb80faf8770900e3700af6661c",
+      "size": 52076408,
       "mode": "replace"
     },
     {
@@ -76,7 +76,7 @@
   "comfy_files": [],
   "cloud": {
     "path": "dist/2026.10.18/cloud_comfy_update_20261018.tar.gz",
-    "sha256": "3bd57d24163ffdc1a6bfbc166162ff33af1d46496f75fe2102cb17ed56e8d54c",
-    "size": 71245729
+    "sha256": "48b4592f61ddb5db51903c6d4934bc79b72448e460847fae2f181642cc58dfa6",
+    "size": 71370481
   }
 }
